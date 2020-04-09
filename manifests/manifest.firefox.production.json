@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "auto find text fragment",
-  "version": "1.0.0",
+  "version": "0.0.2",
 
   "description": "This extension emulates Google Chrome's #:~:text fragment behavior.",
   "author": "xia@silvia.com",
@@ -10,12 +10,14 @@
 
   "applications": {
     "gecko": {
-      "id": ""
+      "id": "xia@silvia.com"
     }
   },
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs",
+    "find"
   ],
   "content_security_policy": "script-src 'self'; object-src 'self'",
 

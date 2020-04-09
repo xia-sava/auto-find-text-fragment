@@ -1,20 +1,37 @@
-
 export enum MessageType {
+    findText = 'findText',
     hashSelection = 'hashSelection',
+    scrollTo = 'scrollTo',
 }
 
 export abstract class Message {
     type: MessageType;
-    tabId: number;
 
-    protected constructor(type: MessageType, tabId: number) {
+    protected constructor(type: MessageType) {
         this.type = type;
-        this.tabId = tabId;
     }
 }
 
 export class HashSelectionMessage extends Message {
-    constructor(tabId: number) {
-        super(MessageType.hashSelection, tabId);
+    constructor() {
+        super(MessageType.hashSelection);
+    }
+}
+
+export class FindTextMessage extends Message {
+    public text: string
+
+    constructor(text: string) {
+        super(MessageType.findText);
+        this.text = text
+    }
+}
+
+export class ScrollToMessage extends Message {
+    public position: number
+
+    constructor(pos: number) {
+        super(MessageType.scrollTo);
+        this.position = pos
     }
 }
