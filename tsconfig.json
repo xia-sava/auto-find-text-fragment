@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "DOM", "ES5", "ES2015", "ES2016"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2019"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
