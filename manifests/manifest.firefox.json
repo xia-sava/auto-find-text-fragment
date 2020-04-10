@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "auto find text fragment",
-  "version": "0.0.2",
+  "version": "0.1.0",
 
   "description": "This extension emulates Google Chrome's #:~:text fragment behavior.",
   "author": "xia@silvia.com",
@@ -16,8 +16,9 @@
 
   "permissions": [
     "activeTab",
-    "tabs",
-    "find"
+    "clipboardWrite",
+    "find",
+    "tabs"
   ],
   "content_security_policy": "script-src 'self'; object-src 'self'",
 
@@ -31,7 +32,7 @@
     "default_icon": {
       "512": "icons/hashtag.svg"
     },
-    "default_title": "Text-finder hashing"
+    "default_title": "Selection to Fragment"
   },
   "content_scripts": [
     {

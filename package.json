@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "./node_modules/.bin/webpack --watch --mode=development --devtool=inline-source-map",
-    "build:prod": "./node_modules/.bin/webpack --mode=production && cp manifests/manifest.firefox.production.json dist/manifest.json",
-    "build:dev": "./node_modules/.bin/webpack --mode=development --devtool=inline-source-map && cp manifests/manifest.firefox.development.json dist/manifest.json",
+    "build:prod": "./node_modules/.bin/webpack --mode=production && cp manifests/manifest.firefox.json dist/manifest.json",
+    "build:dev": "./node_modules/.bin/webpack --mode=development --devtool=inline-source-map && cp manifests/manifest.firefox.json dist/manifest.json",
     "release": "npm run build:prod && rm -fr release/* && zip -r release/firefox-submit.zip src package.json manifests tsconfig.json webpack.config.js && cp -r dist release/firefox && cd release/firefox && zip -r ../firefox.zip ./*",
     "clean": "rm -fr dist/js/* dist/manifest.json release/*"
   },

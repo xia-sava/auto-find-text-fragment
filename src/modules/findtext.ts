@@ -39,13 +39,29 @@ export class FindText {
      */
     static hashSelection(document: Document): boolean {
         const encoded = document.getSelection()?.toString() ?? ''
-        if (encoded != '') {
+        if (encoded !== '') {
             const text = encodeURI(encoded)
             document.location.hash = `#:~:text=${text}`
+            this.copyToClipBoard(document.location.href)
             document.location.reload()
             return true
         } else {
             return false
         }
+    }
+
+    /**
+     * クリップボードにテキストを書き込む．
+     * @param text
+     */
+    private static copyToClipBoard(text: string) {
+        const onCopy = (event: ClipboardEvent) => {
+            document.removeEventListener('copy', onCopy, true)
+            event.stopImmediatePropagation()
+            event.preventDefault()
+            event.clipboardData?.setData('text/plain', text)
+        }
+        document.addEventListener('copy', onCopy)
+        document.execCommand('copy')
     }
 }
