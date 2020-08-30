@@ -22,7 +22,7 @@ Google Chrome の `#:~:text=` に近い挙動を Firefox で実現します．
 # リンク
 
 github: https://github.com/xia-sava/auto-find-text-fragment  
-add-ons: https://addons.mozilla.org/ja/firefox/addon/auto-find-text-fragment/
+add-ons: https://addons.mozilla.org/firefox/addon/auto-find-text-fragment/
 
 # アイコンの出典
 
